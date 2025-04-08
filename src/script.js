@@ -55,11 +55,13 @@ const red = create(200, "red");
 const green = create(200, "green");
 
 const update = () => {
-    rule(red, red, 0.1)
-    rule(yellow, red, 0.15)
-    rule(green, green, -0.7)
-    rule(green, red, -0.2)
-    rule(red, green, -0.1)
+    rule(green, green, -0.32)
+    rule(green, red, -0.17)
+    rule(green, yellow, 0.34)
+    rule(red, red, -0.10)
+    rule(red, green, -0.34)
+    rule(yellow, yellow, 0.15)
+    rule(yellow, green, -0.20)
     ctx.clearRect(0, 0, 500, 500)
     draw(0, 0, "black", 500)
     for(i = 0; i < particles.length; i++) {

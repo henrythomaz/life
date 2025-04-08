@@ -25,9 +25,41 @@ const create = (number, color) => {
     return group;
 }
 
-const yellow = create(20, "yellow");
+const rule = (particles1, particles2, g) => {
+    for(let i = 0; i < particles1.length; i++) {
+        fx = 0;
+        fy = 0;
+            for(let j = 0; j < particles2.length; j++) {
+            a = particles1[i];
+            b = particles2[j];
+            dx = a.x - b.x;
+            dy = a.y - b.y;
+            h = Math.sqrt(dx*dx + dy*dy);
+            if(h > 0 && h < 80) {
+                F = g * 1/h;
+                fx += (F *dx);
+                fy += (F *dy);
+            }
+        }
+        a.vx = (a.vx + fx)*0.5
+        a.vy = (a.vy + fy)*0.5
+        a.x += a.vx
+        a.y += a.vy
+        if(a.x <= 0 || a.x >= 500) { a.vx *= -1 }
+        if(a.y <= 0 || a.y >= 500) { a.vy *= -1 }
+    }
+}
+
+const yellow = create(200, "yellow");
+const red = create(200, "red");
+const green = create(200, "green");
 
 const update = () => {
+    rule(red, red, 0.1)
+    rule(yellow, red, 0.15)
+    rule(green, green, -0.7)
+    rule(green, red, -0.2)
+    rule(red, green, -0.1)
     ctx.clearRect(0, 0, 500, 500)
     draw(0, 0, "black", 500)
     for(i = 0; i < particles.length; i++) {

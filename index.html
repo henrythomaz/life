@@ -1,23 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        #canvas {
-            width: 100vh;
-            height: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>life</title>
+  <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
-    <canvas id="canvas" width="500" height="500"></canvas>
-    
-    <script src="src/script.js"></script>
+    <div class="container">
+        <canvas id="canvas" width="600" height="600"></canvas>
+      
+
+        <div id="overlay">
+          <button id="startButton">start</button>
+        </div>
+      
+          <!-- Painel de controles -->
+    <div id="controls" style="display: none;">
+        
+        
+        <div class="reset-wrapper">
+            <button id="resetButton">Resetar</button>
+        </div>
+        <br>
+  
+
+        <!-- Primeira linha de controles: green e red -->
+        <div class="control-row">
+        <div class="control-group green">
+            <h3>Green</h3>
+            <label>Quantidade: <input type="range" min="0" max="600" value="10" id="greenNumber"></label>
+            <label>Green x Green: <input type="range" min="-10" max="10" value="0" id="greenGreen"></label>
+            <label>Green x Red: <input type="range" min="-10" max="10" value="0" id="greenRed"></label>
+            <label>Green x White: <input type="range" min="-10" max="10" value="0" id="greenWhite"></label>
+            <label>Green x Blue: <input type="range" min="-10" max="10" value="0" id="greenBlue"></label>
+        </div>
+
+        <div class="control-group red">
+            <h3>Red</h3>
+            <label>Quantidade: <input type="range" min="0" max="600" value="10" id="redNumber"></label>
+            <label>Red x Red: <input type="range" min="-10" max="10" value="0" id="redRed"></label>
+            <label>Red x Green: <input type="range" min="-10" max="10" value="0" id="redGreen"></label>
+            <label>Red x White: <input type="range" min="-10" max="10" value="0" id="redWhite"></label>
+            <label>Red x Blue: <input type="range" min="-10" max="10" value="0" id="redBlue"></label>
+        </div>
+        </div>
+
+        <!-- Segunda linha de controles: white e blue -->
+        <div class="control-row">
+        <div class="control-group white">
+            <h3>White</h3>
+            <label>Quantidade: <input type="range" min="0" max="600" value="10" id="whiteNumber"></label>
+            <label>White x White: <input type="range" min="-10" max="10" value="0" id="whiteWhite"></label>
+            <label>White x Red: <input type="range" min="-10" max="10" value="0" id="whiteRed"></label>
+            <label>White x Green: <input type="range" min="-10" max="10" value="0" id="whiteGreen"></label>
+            <label>White x Blue: <input type="range" min="-10" max="10" value="0" id="whiteBlue"></label>
+        </div>
+
+        <div class="control-group blue">
+            <h3>Blue</h3>
+            <label>Quantidade: <input type="range" min="0" max="600" value="10" id="blueNumber"></label>
+            <label>Blue x Blue: <input type="range" min="-10" max="10" value="0" id="blueBlue"></label>
+            <label>Blue x White: <input type="range" min="-10" max="10" value="0" id="blueWhite"></label>
+            <label>Blue x Red: <input type="range" min="-10" max="10" value="0" id="blueRed"></label>
+            <label>Blue x Green: <input type="range" min="-10" max="10" value="0" id="blueGreen"></label>
+        </div>
+        </div>
+    </div>
+</div>
+    </div>
+      
+
+  <script src="src/script.js"></script>
 </body>
 </html>

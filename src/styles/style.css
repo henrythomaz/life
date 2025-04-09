@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center; 
+    gap: 30px;
+    position: relative;
+  }
+  
+  canvas {
+    border: 2px solid white;
+    filter: blur(5px);
+    transition: filter 0.5s ease;
+  }
+  
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  #startButton {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(145deg, #00c2ff, #007a99);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 194, 255, 0.5);
+    transition: transform 0.2s ease;
+  }
+  #startButton:hover {
+    transform: scale(1.05);
+  }
+  
+  #controls {
+    width: 300px;
+    max-height: 90vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  #resetButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    background: linear-gradient(145deg, #ff4d4d, #a90000);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+    transition: transform 0.2s ease;
+  }
+  #resetButton:hover {
+    transform: scale(1.05);
+  }
+  .reset-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .control-row {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .control-group {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    width: 48%;
+  }
+  
+  .control-group h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .control-group label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+  
+  .control-group input[type="range"] {
+    width: 100%;
+  }
+
+  
